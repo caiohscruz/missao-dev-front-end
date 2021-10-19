@@ -1,32 +1,60 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Cursos</router-link> |
-      <router-link to="/admin">Painel Administrativo</router-link>
-    </div>
+    <navbar />
     <router-view />
   </div>
 </template>
 
+<script>
+  import navbar from "./components/NavBar.vue";
+
+  export default {
+    name: "App",
+    components: {
+      navbar,
+    }
+  }
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+ * {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+html {
+    --primary: #2E948A;
+    --overlay: #FFFFFF;
+    --menu: #FDFDFD;
+    --secondary: #FF4081;
+    --subtitle: #555555;
+    --class: #419488;
+    --background: #E5E5E5;
+    --text: #000000;
+    --table-header: #EBEBEB;
+    --table-border: #989898;
+    --table-background: #FFFFFF;
+    --danger: #F8513A;
+    --warning: #F8C23A;
+    --hr: #C4C4C4;
+    --input-text: #404040;
+    --input-border: #AEAEAE;
+    --input-background: #FFFFFF;
+    --section-form: #419488;
+
+    /* Para facilitar o dimensionamento dos elementos */
+    /* User agent : 1rem = 16px -> 62.5% = 10px */
+    font-size: 62.5%;
+
+    font-family: 'Ubuntu', sans-serif;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+body{
+    background-color: var(--background);
+    color: var(--text);
+    font-size: 2rem;
 }
 </style>
