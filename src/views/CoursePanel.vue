@@ -43,7 +43,10 @@ export default {
         this.course.title = res.data.title;
         this.course.cover = res.data.cover;
         this.course.description = res.data.description;
-      });
+      }).catch(() =>{
+        alert(`Curso de id ${this.id} não encontrado. \n Iremos redirecioná-lo para a página inicial`);
+        window.location.href = "/";
+      })
     axios
       .get("https://demo-api-anima-project.herokuapp.com/lessons/" + this.id)
       .then((res) => {
