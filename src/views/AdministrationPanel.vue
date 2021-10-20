@@ -14,7 +14,7 @@
         </td>
         <td class="actions">
           <button class="warning-btn">
-            <router-link :to="'/admin/course/edit/' + course.id">
+            <router-link :to="'/admin/course/?action=edit&id=' + course.id">
               editar
             </router-link>
           </button>

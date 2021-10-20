@@ -23,14 +23,9 @@ const routes = [
     name: "AdministrationPanel",
     component: AdministrationPanel
   },
-  {
-    path: "/admin/course/new",
-    name: "NewCourse",
-    component: CourseMaintenance
-  },
-  {
-    path: "/admin/course/edit/:id",
-    name: "EditCourse",
+   {
+    path: "/admin/course/",
+    name: "CourseMaintenance",
     component: CourseMaintenance
   }
 ];
