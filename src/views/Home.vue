@@ -3,7 +3,7 @@
     <h1>Cursos</h1>
     <h4>Educação financeira é tudo de bom</h4>
     <div v-for="(course, index) in courses" :key="index">
-      <coursecard class="courseslist" />
+      <coursecard class="courseslist" :course="course"/>
       <div class="separator" v-show="index < courses.length - 1"></div>
     </div>
   </div>
@@ -11,6 +11,7 @@
 
 <script>
   import coursecard from "../components/CourseCard.vue";
+  import axios from "axios";
 
   export default {
     name: "Home",
@@ -19,10 +20,23 @@
     },
     data() {
       return {
-        courses: [1, 2, 3, 4]
+        courses: []
       }
+    },
+    created() {
+      axios.get("https://demo-api-anima-project.herokuapp.com/courses")
+        .then(res => {
+            res.data.forEach(course => {
+              this.courses.push({
+                id: course.id,
+                title: course.title,
+                cover: course.cover,
+                description: course.description
+              })
+            })
+          })
     }
-  };
+  }
 </script>
 
 <style>

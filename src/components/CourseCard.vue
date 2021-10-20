@@ -1,17 +1,12 @@
 <template>
   <div class="coursecard">
     <div>
-      <img src="../assets/image-chess.png" />
+      <img :src="course.cover" />
     </div>
     <div>
-      <h3>Investimento para iniciantes</h3>
+      <h3>{{course.title}}</h3>
       <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-        quae ab illo inventore veritatis et quasi architecto beatae vitae
-        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-        eos qui ratione voluptatem sequi nesciunt.
+        {{course.description}}
       </p>
       <button class="enter-course">começar agora</button>
     </div>
@@ -20,7 +15,9 @@
 
 <script>
   export default {
-
+    props: {
+      course : Object,
+    }
   }
 </script>
 
