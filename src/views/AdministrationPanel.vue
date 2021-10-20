@@ -24,6 +24,9 @@
         </td>
       </tr>
     </table>
+    <button class="enter-course">
+      <router-link :to="'/admin/course/?action=new'">Adicionar curso</router-link>
+    </button>
   </div>
 </template>
 
