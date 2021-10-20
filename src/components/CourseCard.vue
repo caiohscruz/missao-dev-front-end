@@ -8,7 +8,11 @@
       <p>
         {{course.description}}
       </p>
-      <button class="enter-course">começar agora</button>
+      <button class="enter-course">
+        <router-link :to='"/course/"+course.id'>Começar agora</router-link>
+      </button>
+    
+
     </div>
   </div>
 </template>
@@ -57,5 +61,9 @@
     width: 23.3rem;
     height: 5.1rem;
     margin-top: 6.6rem;
+  }
+
+  a{
+    color: inherit;
   }
 </style>
