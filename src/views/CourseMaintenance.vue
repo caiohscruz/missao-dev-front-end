@@ -87,7 +87,12 @@ export default {
         window.location.href = "/admin";
       }
     } else {
-      console.log("ok");
+      if(this.action!="new"){
+        alert(
+          `Ação não esperada. \n Iremos redirecioná-lo ao painel administrativo`
+        );
+        window.location.href = "/admin";
+      }
     }
   },
 };
