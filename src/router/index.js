@@ -25,12 +25,12 @@ const routes = [
   },
   {
     path: "/admin/course/new",
-    name: "CourseMaintenance",
+    name: "NewCourse",
     component: CourseMaintenance
   },
   {
     path: "/admin/course/edit/:id",
-    name: "CourseMaintenance",
+    name: "EditCourse",
     component: CourseMaintenance
   }
 ];
