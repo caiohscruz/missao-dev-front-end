@@ -9,8 +9,8 @@
     <div>
       <img :src="course.cover" />
     </div>
-    <div v-for="(lesson,index) in lessons" :key="index">
-        <lessoncard :lesson="lesson" />
+    <div v-for="(lesson,index) in lessons" :key="index" >
+        <lessoncard :lesson="lesson" class="lessonslist"/>
         <div class="separator" v-show="index < lessons.length - 1"></div>
     </div>
   </div>
@@ -107,4 +107,11 @@ h3 {
 a {
   color: inherit;
 }
+
+.lessonslist {
+    padding-top: 9.5rem;
+    padding-bottom: 9.5rem;
+    padding-right: 5.7rem;
+    padding-left: 3rem;
+  }
 </style>
