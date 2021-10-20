@@ -18,16 +18,16 @@
                 editar
               </router-link>
             </button>
-            <button class="danger-btn">
+            <button class="danger-btn" @click="confirmDeletion(course.id)">
               excluir
             </button>
           </td>
         </tr>
       </table>
       <button class="enter-course">
-        <router-link :to="'/admin/course/?action=new'"
-          >Adicionar curso</router-link
-        >
+        <router-link :to="'/admin/course/?action=new'">
+          Adicionar curso
+        </router-link>
       </button>
     </div>
   </div>
@@ -53,6 +53,26 @@ export default {
           });
         });
       });
+  },
+  methods: {
+    confirmDeletion(id) {
+      var decision = confirm("Você quer realmente deletar este curso?");
+      if (decision) {
+        axios
+          .delete("https://demo-api-anima-project.herokuapp.com/course/" + id)
+          .then(() => {
+            alert(
+              `Curso deletado com sucesso`
+            );
+            window.location.href = "/admin";
+          }).catch(err=>{
+            console.log(err);
+            alert(
+              `Houve algum problema, confira o console`
+            );
+          })
+      }
+    },
   },
 };
 </script>
