@@ -2,31 +2,34 @@
   <div>
     <h1>Painel Administrativo</h1>
     <h4>Educação financeira é tudo de bom</h4>
-
-    <table>
-      <tr>
-        <td class="table-header">Curso</td>
-        <td class="table-header actions">Ações</td>
-      </tr>
-      <tr v-for="(course, index) in courses" :key="index" class="course">
-        <td>
-          {{ course.title }}
-        </td>
-        <td class="actions">
-          <button class="warning-btn">
-            <router-link :to="'/admin/course/?action=edit&id=' + course.id">
-              editar
-            </router-link>
-          </button>
-           <button class="danger-btn">
+    <div class="main">
+      <table>
+        <tr>
+          <td class="table-header">Curso</td>
+          <td class="table-header actions">Ações</td>
+        </tr>
+        <tr v-for="(course, index) in courses" :key="index" class="course">
+          <td>
+            {{ course.title }}
+          </td>
+          <td class="actions">
+            <button class="warning-btn">
+              <router-link :to="'/admin/course/?action=edit&id=' + course.id">
+                editar
+              </router-link>
+            </button>
+            <button class="danger-btn">
               excluir
-          </button>
-        </td>
-      </tr>
-    </table>
-    <button class="enter-course">
-      <router-link :to="'/admin/course/?action=new'">Adicionar curso</router-link>
-    </button>
+            </button>
+          </td>
+        </tr>
+      </table>
+      <button class="enter-course">
+        <router-link :to="'/admin/course/?action=new'"
+          >Adicionar curso</router-link
+        >
+      </button>
+    </div>
   </div>
 </template>
 
@@ -90,17 +93,23 @@ table {
   background-color: var(--danger);
 }
 
-.actions{
+.actions {
   display: flex;
   justify-content: space-between;
   width: 20rem;
 }
 
-.course td:nth-child(1){
+.course td:nth-child(1) {
   width: 50rem;
 }
 
-td{
+td {
   padding: 0.5rem;
+}
+.main {
+  padding-top: 9.5rem;
+  padding-bottom: 9.5rem;
+  padding-right: 5.7rem;
+  padding-left: 3rem;
 }
 </style>
